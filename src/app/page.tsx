@@ -1,34 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full min-h-screen relative pb-24 bg-[#111111]">
-      {/* Split Hero Section */}
-      <section className="flex flex-col lg:flex-row w-full min-h-[85vh]">
-        {/* Left Half: Text Content */}
-        <div className="w-full flex-1 lg:w-1/2 bg-[#111111] text-white flex flex-col justify-center px-8 py-16 lg:pl-24 lg:pr-16">
-          <h1 className="text-5xl lg:text-[5.5rem] font-sans font-extrabold leading-[1.05] mb-8 tracking-tight">
-            Learn Online from the Leaders in Business Education
-          </h1>
-          <p className="text-lg lg:text-2xl text-gray-300 font-light max-w-xl leading-relaxed">
-            Experience Allahabad University wherever you are—in your career or the world—through our flexible online certificate and credential programs.
-          </p>
-        </div>
-
-        {/* Right Half: Image */}
-        <div className="w-full flex-1 lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-black flex items-center justify-center overflow-hidden">
-          <div className="w-full h-full relative">
-            <Image
-              src="/campus.png"
-              alt="Allahabad University Campus"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* Breadcrumb Section under Hero */}
       <div className="w-full bg-white border-b border-gray-200 px-6 lg:px-8 py-4 z-10 relative">
