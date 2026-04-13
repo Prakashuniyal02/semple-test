@@ -34,18 +34,18 @@ export default function Navbar() {
           {/* Logo Block - Only visible when NOT scrolled */}
           <div className={`flex items-center transition-opacity duration-300 ${isScrolled ? "hidden opacity-0 w-0" : "opacity-100 mr-6"}`}>
             {/* AU Logo */}
-            <div className="mr-4 flex-shrink-0 bg-white p-1 rounded-md">
+            <div className="mr-4 flex-shrink-0 bg-white px-2 py-1 rounded-md w-[190px] xl:w-[260px]">
               <Image 
                 src="/au_logo.png" 
                 alt="Allahabad University Logo" 
-                width={64} 
-                height={64} 
-                className="object-contain"
+                width={520} 
+                height={150} 
+                className="object-contain w-full h-auto"
                 priority
               />
             </div>
             {/* Divider */}
-            <div className="w-px bg-white/40 h-[64px]"></div>
+            <div className="w-px bg-white/40 h-[56px]"></div>
           </div>
 
           {/* Navigation Links */}
@@ -128,7 +128,7 @@ export default function Navbar() {
             </div>
 
             <div className="mt-auto pt-6 border-t border-gray-800 flex justify-center w-full">
-               <Image src="/au_logo.png" alt="Allahabad University" width={80} height={80} className="opacity-40" />
+               <Image src="/au_logo.png" alt="Allahabad University" width={140} height={50} className="opacity-80 object-contain bg-white rounded-md px-2 py-1" />
             </div>
           </div>
         </div>

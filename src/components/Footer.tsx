@@ -1,89 +1,163 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
-  return (
-    <footer className="bg-[#212121] text-white w-full">
-      {/* Main Footer Block */}
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-12 xl:px-24 pt-16 pb-12">
-        <div className="flex flex-col md:flex-row justify-between gap-10 lg:gap-8">
-          
-          {/* Col 1: Logo */}
-          <div className="w-full md:w-[22%]">
-            <h2 className="font-serif text-[1.4rem] font-bold leading-[1.05] tracking-tight">
-              Allahabad<br />Business<br />School
-            </h2>
-          </div>
+  const linkSections = [
+    {
+      title: "Quick Links",
+      links: [
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Admissions", href: "/admission" },
+        { label: "Departments", href: "/academics" },
+      ],
+    },
+    {
+      title: "Academic",
+      links: [
+        { label: "Notices", href: "/notices" },
+        { label: "Results", href: "/results" },
+        { label: "Courses", href: "/courses" },
+        { label: "Examinations", href: "/results" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Library", href: "/facilities" },
+        { label: "Alumni", href: "/alumni" },
+        { label: "Careers", href: "/tender" },
+        { label: "FAQ", href: "/contact" },
+      ],
+    },
+  ];
 
-          {/* Col 2: Address */}
-          <div className="w-full md:w-[28%]">
-            <h3 className="font-bold text-[14px] mb-2 tracking-wide">Online</h3>
-            <p className="text-[14px] text-[#cccccc] font-light leading-relaxed">
-              Allahabad Business School<br />
-              Senate House Campus<br />
-              Prayagraj, UP 211002
+  return (
+    <footer className="w-full bg-black text-white">
+      <div className="max-w-[1360px] mx-auto px-6 lg:px-12">
+        <div className="pt-12 lg:pt-14">
+          <h2 className="text-[34px] md:text-[38px] font-semibold leading-none mb-3">
+            Stay Updated
+          </h2>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8 pb-12 border-b border-white/20">
+            <p className="text-white/85 text-[15px]">
+              Subscribe to our newsletter for latest news and announcements
+            </p>
+            <form className="w-full lg:w-auto flex items-center gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full lg:w-[420px] xl:w-[520px] h-11 px-4 text-[14px] bg-white text-black placeholder:text-black/55 outline-none border-none"
+              />
+              <button
+                type="submit"
+                className="h-11 px-4 text-[14px] font-medium text-white hover:text-white/85 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="py-12 lg:py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 border-b border-white/20">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Image
+              src="/au_logo.png"
+              alt="Allahabad University Logo"
+              width={300}
+              height={66}
+              className="w-full max-w-[240px] h-auto object-contain bg-white rounded-md px-2 py-1"
+              priority
+            />
+            <p className="mt-5 text-[14px] leading-7 text-white/85 max-w-[250px]">
+              A premier institution of higher learning dedicated to academic
+              excellence and research
             </p>
           </div>
 
-          {/* Col 3: Links */}
-          <div className="w-full md:w-[25%] flex flex-col space-y-2.5">
-            <Link href="#" className="text-[13.5px] text-[#cccccc] hover:text-white underline underline-offset-[3px] decoration-gray-500 hover:decoration-white transition-colors w-fit pb-[1px]">About</Link>
-            <Link href="#" className="text-[13.5px] text-[#cccccc] hover:text-white underline underline-offset-[3px] decoration-gray-500 hover:decoration-white transition-colors w-fit pb-[1px]">Contact Us</Link>
-            <Link href="#" className="text-[13.5px] text-[#cccccc] hover:text-white underline underline-offset-[3px] decoration-gray-500 hover:decoration-white transition-colors w-fit pb-[1px]">Legal</Link>
-            <Link href="#" className="text-[13.5px] text-[#cccccc] hover:text-white underline underline-offset-[3px] decoration-gray-500 hover:decoration-white transition-colors w-fit pb-[1px]">Request Information</Link>
-          </div>
+          {linkSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="font-semibold text-[23px] mb-4">{section.title}</h3>
+              <ul className="space-y-2.5">
+                {section.links.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-[15px] text-white/90 hover:text-white transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-          {/* Col 4: Social Icons */}
-          <div className="w-full md:w-[25%] flex gap-4 md:justify-end items-start pt-1">
-            <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors">
-              <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors">
-              <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.597 1.323-1.324V1.325C24 .597 23.403 0 22.675 0z"/>
-              </svg>
-            </a>
-            <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors">
-              <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="4" ry="4"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-              </svg>
-            </a>
-            <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-            </a>
-            <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors">
-              <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
+          <div>
+            <h3 className="font-semibold text-[23px] mb-4">Contact Us</h3>
+            <ul className="space-y-3.5 text-[15px] text-white/90">
+              <li className="flex gap-2">
+                <span aria-hidden>◌</span>
+                <span>Allahabad, Uttar Pradesh 211002, India</span>
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden>◌</span>
+                <a href="tel:+915322460000" className="hover:text-white transition-colors">
+                  +91 (532) 2460-XXX
+                </a>
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden>◌</span>
+                <a href="mailto:info@allduniv.ac.in" className="hover:text-white transition-colors">
+                  info@allduniv.ac.in
+                </a>
+              </li>
+            </ul>
           </div>
-
         </div>
-      </div>
 
-      {/* Bottom Footer Block */}
-      <div className="border-t border-[#353535] w-full pb-36">
-        <div className="max-w-[1500px] mx-auto px-6 lg:px-12 xl:px-24 py-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-          
-          {/* Copyright */}
-          <div className="text-[12.5px] text-[#a0a0a0] font-light">
-            © President & Fellows of Allahabad College
+        <div className="py-7 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/"
+              className="w-8 h-8 border border-white/35 flex items-center justify-center text-white/85 hover:text-white transition-colors"
+              aria-label="Facebook"
+            >
+              f
+            </a>
+            <a
+              href="https://twitter.com/"
+              className="w-8 h-8 border border-white/35 flex items-center justify-center text-white/85 hover:text-white transition-colors"
+              aria-label="Twitter"
+            >
+              t
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              className="w-8 h-8 border border-white/35 flex items-center justify-center text-white/85 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              in
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              className="w-8 h-8 border border-white/35 flex items-center justify-center text-white/85 hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
+              ig
+            </a>
           </div>
 
-          {/* Links Row */}
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] text-[#a0a0a0] font-light">
-            <Link href="#" className="hover:text-white transition-colors">Site Map</Link>
-            <Link href="#" className="hover:text-white transition-colors">Jobs</Link>
-            <Link href="#" className="hover:text-white transition-colors">Allahabad University</Link>
-            <Link href="#" className="hover:text-white transition-colors">Trademarks</Link>
-            <Link href="#" className="hover:text-white transition-colors">Policies</Link>
-            <Link href="#" className="hover:text-white transition-colors">Accessibility</Link>
-            <Link href="#" className="hover:text-white transition-colors">Digital Accessibility</Link>
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-[14px] text-white/80">
+            <p>© 2024 University of Allahabad. All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>
