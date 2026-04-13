@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Menu, ChevronDown } from "lucide-react";
+import { Search, Menu, ChevronDown, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#A31F34] py-0 h-14 shadow-lg text-white" : "bg-[#0f0f0f] py-2 lg:py-3 text-white"}`}>
       <div className={`mx-auto max-w-[1500px] px-6 lg:px-8 h-full flex items-center justify-between`}>
         
@@ -75,12 +77,62 @@ export default function Navbar() {
           <button aria-label="Search" className="text-white hover:text-gray-300">
             <Search className="w-5 h-5" />
           </button>
-          <button aria-label="Menu" className="text-white hover:text-gray-300">
+          <button aria-label="Menu" onClick={() => setIsMobileMenuOpen(true)} className="text-white hover:text-gray-300">
             <Menu className="w-6 h-6" />
           </button>
         </div>
 
       </div>
     </nav>
+
+      {/* Mobile / Full Screen Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] flex">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          ></div>
+          
+          {/* Sidebar */}
+          <div className="relative w-[300px] sm:w-[380px] h-full bg-[#1A1A1A] text-white p-6 md:p-10 flex flex-col shadow-2xl ml-auto animate-in slide-in-from-right duration-300">
+            <div className="flex justify-between items-center mb-8 border-b border-gray-800 pb-4">
+              <span className="font-bold text-lg tracking-wider text-gray-200">NAVIGATION</span>
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)} 
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="flex flex-col space-y-5 overflow-y-auto pb-20 scrollbar-hide">
+              <Link href="/" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link href="/about" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+              <Link href="/administration" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Administration</Link>
+              <Link href="/academics" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Academics</Link>
+              <Link href="/student" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Student</Link>
+              <Link href="/research" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Research</Link>
+              <Link href="/facilities" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Facilities</Link>
+              <Link href="/gallery" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
+              <Link href="/alumni" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Alumni</Link>
+              <Link href="/colleges" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Colleges</Link>
+              <Link href="/endowment" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Endowment</Link>
+              <Link href="/iqac" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>IQAC</Link>
+              <Link href="/newsletter" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>News letter</Link>
+              <Link href="/convocation" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Convocation</Link>
+              <Link href="/courses" className="text-xl font-light text-[#C4263F] hover:text-[#A31F34] transition-colors flex items-center font-bold mt-4" onClick={() => setIsMobileMenuOpen(false)}>
+                Explore Courses <ChevronDown className="w-4 h-4 ml-2 -rotate-90" />
+              </Link>
+            </div>
+
+            <div className="mt-auto pt-6 border-t border-gray-800 flex justify-center w-full">
+               <Image src="/au_logo.png" alt="Allahabad University" width={80} height={80} className="opacity-40" />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
