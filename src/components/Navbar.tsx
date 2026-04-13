@@ -50,19 +50,19 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center h-full ml-2 xl:ml-6">
             <div className={`flex items-center space-x-3 xl:space-x-4 text-[12px] xl:text-[13.5px] font-medium transition-colors ${isScrolled ? "text-white" : "text-gray-200"}`}>
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <Link href="#about" className="flex items-center gap-1 hover:text-white transition-colors">About <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#administration" className="flex items-center gap-1 hover:text-white transition-colors">Administration <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#academics" className="flex items-center gap-1 hover:text-white transition-colors">Academics <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#student" className="flex items-center gap-1 hover:text-white transition-colors">Student <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#research" className="flex items-center gap-1 hover:text-white transition-colors">Research <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#facilities" className="flex items-center gap-1 hover:text-white transition-colors">Facilities <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#gallery" className="flex items-center gap-1 hover:text-white transition-colors">Gallery <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#alumni" className="flex items-center gap-1 hover:text-white transition-colors">Alumni <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#colleges" className="flex items-center gap-1 hover:text-white transition-colors">Colleges <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="#endowment" className="hover:text-white transition-colors">Endowment</Link>
-              <Link href="#iqac" className="hover:text-white transition-colors">IQAC</Link>
-              <Link href="#newsletter" className="hover:text-white transition-colors whitespace-nowrap">News letter</Link>
-              <Link href="#convocation" className="flex items-center gap-1 hover:text-white transition-colors">Convocation <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/about" className="flex items-center gap-1 hover:text-white transition-colors">About <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/administration" className="flex items-center gap-1 hover:text-white transition-colors">Administration <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/academics" className="flex items-center gap-1 hover:text-white transition-colors">Academics <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/student" className="flex items-center gap-1 hover:text-white transition-colors">Student <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/research" className="flex items-center gap-1 hover:text-white transition-colors">Research <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/facilities" className="flex items-center gap-1 hover:text-white transition-colors">Facilities <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/gallery" className="flex items-center gap-1 hover:text-white transition-colors">Gallery <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/alumni" className="flex items-center gap-1 hover:text-white transition-colors">Alumni <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/colleges" className="flex items-center gap-1 hover:text-white transition-colors">Colleges <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/endowment" className="hover:text-white transition-colors">Endowment</Link>
+              <Link href="/iqac" className="hover:text-white transition-colors">IQAC</Link>
+              <Link href="/newsletter" className="hover:text-white transition-colors whitespace-nowrap">News letter</Link>
+              <Link href="/convocation" className="flex items-center gap-1 hover:text-white transition-colors">Convocation <ChevronDown className="w-3 h-3 opacity-70" /></Link>
             </div>
           </div>
         </div>

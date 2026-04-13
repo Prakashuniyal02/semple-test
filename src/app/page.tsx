@@ -1,115 +1,275 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
+import { BookOpen, Mail, Folder, FileText, Users, GraduationCap, ShieldCheck, Network, Globe, Library, Landmark } from "lucide-react";
+import FloatingBanner from "@/components/FloatingBanner";
+import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full min-h-screen relative pb-24 bg-[#111111]">
       <HeroSlider />
 
-      {/* Breadcrumb Section under Hero */}
-      <div className="w-full bg-white border-b border-gray-200 px-6 lg:px-8 py-4 z-10 relative">
-        <div className="text-[13px] font-bold text-gray-400 tracking-wide font-sans flex items-center">
-          <span className="hover:text-black cursor-pointer transition-colors text-gray-500">Allahabad Business School</span>
-          <span className="mx-2 text-gray-400">&gt;</span>
-          <span className="text-black">AU Online</span>
-        </div>
-      </div>
-
-      {/* Content Section - Information & Cards */}
-      <section className="bg-[#fbfcff] w-full pt-16 pb-32 px-6 lg:px-12 xl:px-24">
-        
-        {/* Title and Paragraph Split */}
-        <div className="flex flex-col lg:flex-row max-w-[1500px] mx-auto gap-8 lg:gap-16 xl:gap-24 mb-16">
-          <div className="w-full lg:w-[55%]">
-            <h2 className="text-4xl lg:text-[2.75rem] font-sans font-bold leading-[1.1] tracking-tight text-[#222]">
-              Real-world, immersive learning that provides in-demand business skills
-            </h2>
-          </div>
-          <div className="w-full lg:w-[45%] flex items-start lg:pt-2">
-            <p className="text-lg text-[#555] leading-relaxed font-normal">
-              AU Online offers a unique and highly engaging way to learn vital business concepts that today's professionals need to advance their careers.
-            </p>
-          </div>
-        </div>
-
-        {/* 4 Cards Grid */}
-        <div className="max-w-[1500px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Leadership Section under Hero */}
+      <section className="w-full bg-white px-6 lg:px-12 xl:px-24 py-16 z-20 relative border-b border-gray-200">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12">
           
           {/* Card 1 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-[4/3] bg-[#e3b2a4] flex items-center justify-center p-6 mb-5 relative overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center text-black/50 transition-transform duration-500 group-hover:scale-105">
-                <svg viewBox="0 0 100 100" className="w-32 h-32 absolute left-4 opacity-70"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                <div className="w-16 h-16 bg-white shadow-xl flex items-center justify-center z-10 border border-gray-100">
-                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                </div>
-                <div className="w-12 h-12 bg-black absolute bottom-6 right-10 z-20 rounded-full flex items-center justify-center"></div>
-              </div>
+          <div className="flex flex-col group cursor-default">
+            <div className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden mb-5 bg-gray-100 shadow-sm transition-shadow group-hover:shadow-md">
+              <Image src="/leadership/murmu.jpg" alt="Smt. Droupadi Murmu" fill className="object-cover object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-90"></div>
+              <p className="absolute bottom-4 left-5 text-white font-medium text-[17px]">Visitor</p>
             </div>
-            <h3 className="text-[1.35rem] font-bold font-sans text-[#222] mb-2 group-hover:underline decoration-2 underline-offset-4 decoration-[#C4263F]">
-              Business Essentials
-            </h3>
-            <p className="text-[15px] text-[#555] leading-relaxed pr-4">Make informed, data-driven decisions and learn the fundamentals of modern business.</p>
+            <h3 className="text-[1.15rem] font-bold font-sans text-gray-900 mb-1.5 leading-snug">Smt. Droupadi Murmu</h3>
+            <p className="text-[11.5px] font-semibold text-[#A31F34] uppercase tracking-wider">President of India</p>
           </div>
 
           {/* Card 2 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-[4/3] bg-[#f0e358] flex items-center justify-center p-6 mb-5 relative overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center text-black/50 transition-transform duration-500 group-hover:scale-105">
-               <svg viewBox="0 0 100 100" className="w-40 h-40 absolute top-0 -left-6 opacity-30"><path d="M10,50 Q50,0 90,50 T50,90 Z" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-               <div className="w-14 h-20 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] flex items-center justify-center z-10 relative left-4">
-                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-               </div>
-               <div className="w-16 h-16 bg-black absolute bottom-6 right-8 z-20 flex items-center justify-center -rotate-[15deg]">
-                 <div className="w-10 h-10 border-4 border-dashed border-white rounded-full"></div>
-               </div>
-              </div>
+          <div className="flex flex-col group cursor-default">
+            <div className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden mb-5 bg-gray-100 shadow-sm transition-shadow group-hover:shadow-md">
+              <Image src="/leadership/patel.png" alt="Smt. Anandiben Patel" fill className="object-cover object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-90"></div>
+              <p className="absolute bottom-4 left-5 text-white font-medium text-[17px]">Chief Rector</p>
             </div>
-            <h3 className="text-[1.35rem] font-bold font-sans text-[#222] mb-2 group-hover:underline decoration-2 underline-offset-4 decoration-[#C4263F]">
-              Entrepreneurship & Innovation
-            </h3>
-            <p className="text-[15px] text-[#555] leading-relaxed pr-4">Master proven frameworks to harness new ideas and build successful ventures.</p>
+            <h3 className="text-[1.15rem] font-bold font-sans text-gray-900 mb-1.5 leading-snug">Smt. Anandiben Patel</h3>
+            <p className="text-[11.5px] font-semibold text-[#A31F34] uppercase tracking-wider">Governor of Uttar Pradesh</p>
           </div>
 
           {/* Card 3 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-[4/3] bg-[#f5cb74] flex items-center justify-center p-6 mb-5 relative overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center text-black/50 transition-transform duration-500 group-hover:scale-105">
-                <svg viewBox="0 0 100 100" className="w-full h-full absolute opacity-20"><line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="1"/><line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" strokeWidth="1"/></svg>
-                <div className="w-20 h-16 bg-white border border-gray-100 flex items-center justify-center z-10 shadow-lg absolute left-8 top-12 rotate-6">
-                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
-                </div>
-                <div className="w-16 h-20 bg-transparent border-[3px] border-black absolute bottom-6 right-10 z-20 flex flex-col justify-between p-2">
-                  <div className="h-2 bg-black w-full text-black"></div>
-                  <div className="h-2 bg-black w-2/3 text-black"></div>
-                  <div className="h-2 bg-black w-full text-black"></div>
-                </div>
-              </div>
+          <div className="flex flex-col group cursor-default">
+            <div className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden mb-5 bg-gray-100 shadow-sm transition-shadow group-hover:shadow-md">
+              <Image src="/leadership/chauhan.png" alt="Shri Ashish Kumar Chauhan" fill className="object-cover object-[center_10%]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-90"></div>
+              <p className="absolute bottom-4 left-5 text-white font-medium text-[17px]">Chancellor</p>
             </div>
-            <h3 className="text-[1.35rem] font-bold font-sans text-[#222] mb-2 group-hover:underline decoration-2 underline-offset-4 decoration-[#C4263F]">
-              Marketing
-            </h3>
-            <p className="text-[15px] text-[#555] leading-relaxed pr-4">Build differentiated marketing strategies and create compelling value for your customers.</p>
+            <h3 className="text-[1.15rem] font-bold font-sans text-gray-900 mb-1.5 leading-snug">Shri Ashish Kumar Chauhan</h3>
+            <p className="text-[11.5px] font-semibold text-[#A31F34] uppercase tracking-wider">Chancellor (University of Allahabad)</p>
           </div>
 
           {/* Card 4 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-[4/3] bg-[#d994b6] flex items-center justify-center p-6 mb-5 relative overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center text-black/50 transition-transform duration-500 group-hover:scale-105">
-                <svg viewBox="0 0 100 100" className="w-32 h-32 absolute bottom-0 opacity-70"><polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                <div className="w-0 h-0 border-l-[35px] border-l-transparent border-b-[60px] border-b-black border-r-[35px] border-r-transparent z-10 absolute left-6 bottom-8"></div>
-                <div className="w-16 h-16 rounded-full bg-white shadow-xl flex items-center justify-center z-20 absolute top-8 right-6">
-                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                </div>
-              </div>
+          <div className="flex flex-col group cursor-default">
+            <div className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden mb-5 bg-gray-100 shadow-sm transition-shadow group-hover:shadow-md">
+              <Image src="/leadership/srivastava.jpg" alt="Prof. Sangita Srivastava" fill className="object-cover object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-90"></div>
+              <p className="absolute bottom-4 left-5 text-white font-medium text-[17px]">Vice-Chancellor</p>
             </div>
-            <h3 className="text-[1.35rem] font-bold font-sans text-[#222] mb-2 group-hover:underline decoration-2 underline-offset-4 decoration-[#C4263F]">
-              Leadership & Management
-            </h3>
-            <p className="text-[15px] text-[#555] leading-relaxed pr-4">Develop your leadership style and drive organizational change effectively.</p>
+            <h3 className="text-[1.15rem] font-bold font-sans text-gray-900 mb-1.5 leading-snug">Prof. Sangita Srivastava</h3>
+            <p className="text-[11.5px] font-semibold text-[#A31F34] uppercase tracking-wider">Vice-Chancellor (University of Allahabad)</p>
           </div>
 
+        </div>
+      </section>
+
+      {/* Announcement Section */}
+      <section className="w-full bg-white px-6 lg:px-12 xl:px-24 py-16 border-b border-gray-200">
+        <div className="max-w-[1500px] mx-auto">
+          {/* Header */}
+          <div className="flex items-center mb-10">
+            <h2 className="text-[2rem] font-extrabold font-sans text-[#222] tracking-tight uppercase whitespace-nowrap mr-6">
+              ANNOUNCEMENT
+            </h2>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
+
+          {/* 2-Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16">
+            
+            {/* Left Column (Featured News) */}
+            <div className="flex flex-col">
+              <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden mb-5 bg-gray-100 shadow-sm">
+                <Image src="/leadership/srivastava.jpg" alt="Vice-Chancellor" fill className="object-cover object-top" />
+              </div>
+              <div className="flex items-center text-gray-500 text-sm mb-3 font-medium">
+                <svg className="w-4 h-4 mr-2 text-[#A31F34]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Jan 07, 2024
+              </div>
+              <h3 className="text-lg font-bold font-sans text-gray-800 mb-4 leading-snug">
+                New Year Greeting from Hon'ble Vice-Chancellor
+              </h3>
+              <Link href="#" className="text-[#A31F34] font-bold text-[15px] tracking-wide hover:underline cursor-pointer">
+                View Detail
+              </Link>
+            </div>
+
+            {/* Right Column (List of Announcements) */}
+            <div className="flex flex-col relative w-full h-[400px] overflow-hidden group">
+              <div className="flex flex-col space-y-6 pr-4 animate-scroll-up group-hover:[animation-play-state:paused] pb-8 pt-4">
+                {/* Announcement 1 */}
+                <div className="border-b border-gray-200 pb-5">
+                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">09 Apr 2026</p>
+                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors flex flex-wrap items-center gap-1.5">
+                    Congratulations to all the AU Students selected in IAS 2025, UPPCS -2024 and Judicial Services
+                    <span className="inline-flex items-center px-1.5 py-0.5 bg-[#d92128] text-white text-[9px] font-bold rounded-sm animate-pulse tracking-wider leading-none relative top-[-1px]">NEW</span>
+                  </p>
+                </div>
+                {/* Announcement 2 */}
+                <div className="border-b border-gray-200 pb-5">
+                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">09 Apr 2026</p>
+                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors flex flex-wrap items-center gap-1.5">
+                    प्रतियोगी परीक्षाओं में चयनित विद्यार्थी सम्मान समारोह, 10 अप्रैल 2026- 'हमें आप पर गर्व है'
+                    <span className="inline-flex items-center px-1.5 py-0.5 bg-[#d92128] text-white text-[9px] font-bold rounded-sm animate-pulse tracking-wider leading-none relative top-[-1px]">NEW</span>
+                  </p>
+                </div>
+                {/* Announcement 3 */}
+                <div className="border-b border-gray-200 pb-5">
+                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">02 Apr 2026</p>
+                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors">
+                    Notice for Practice
+                  </p>
+                </div>
+                {/* Announcement 4 */}
+                <div className="border-b border-gray-200 pb-5">
+                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">01 Apr 2026</p>
+                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors">
+                    Guidelines for the Upcoming National Seminar on Modern Physics
+                  </p>
+                </div>
+              </div>
+
+              {/* Gradient Overlay for seamless scroll effect at top and bottom */}
+              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-white to-transparent pointer-events-none z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
+
+              {/* Read All News Footer */}
+              <div className="absolute bottom-0 right-4 z-20 bg-white pt-2 pl-4">
+                <Link href="#" className="text-[#A31F34] font-bold text-[15px] hover:underline tracking-wide">
+                  Read All News
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Online Portal Section */}
+      <section className="w-full bg-[#f4f4f4] px-6 lg:px-12 xl:px-24 py-16">
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center">
+          <h2 className="text-[2rem] font-extrabold font-sans text-[#2f3640] tracking-tight uppercase mb-12">
+            ONLINE PORTAL
+          </h2>
+          
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-6 max-w-5xl">
+            {/* Button 1 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <BookOpen className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                Admission
+              </div>
+            </Link>
+
+            {/* Button 2 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <Mail className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                Web Mail
+              </div>
+            </Link>
+
+            {/* Button 3 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <Folder className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                UoA E-Office
+              </div>
+            </Link>
+
+            {/* Button 4 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <FileText className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                Samarth Portal
+              </div>
+            </Link>
+
+            {/* Empty break for centering 2 items in next row if needed, easily handled by flex-wrap and justify-center */}
+            
+            {/* Button 5 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <Users className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                Corporate Social Responsibility (CSR)
+              </div>
+            </Link>
+
+            {/* Button 6 */}
+            <Link href="#" className="flex items-stretch shadow-sm hover:shadow-md transition-shadow group h-[55px] w-auto">
+              <div className="bg-white px-5 flex items-center justify-center border border-gray-200 border-r-0 text-[#A31F34]">
+                <GraduationCap className="w-[1.1rem] h-[1.1rem]" strokeWidth={2.5} />
+              </div>
+              <div className="bg-[#a82037] hover:bg-[#8A1A2C] transition-colors text-white px-7 flex items-center justify-center text-[15px] font-medium tracking-wide">
+                Endowment Scholarship
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Useful Links Section */}
+      <section className="w-full bg-white px-6 lg:px-12 xl:px-24 py-16">
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center">
+          <h2 className="text-[2rem] font-extrabold font-sans text-[#2d3748] tracking-tight uppercase mb-12">
+            USEFUL LINKS
+          </h2>
+          
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-6 max-w-6xl w-full">
+            {/* Placeholder items for the images since we don't have the assets */}
+            
+            {/* 1 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-white hover:shadow-md transition-shadow cursor-pointer p-4 group">
+              <div className="flex items-center gap-2">
+                 <ShieldCheck className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
+                 <span className="text-[13px] font-bold text-gray-700 leading-tight">Cyber Dost</span>
+              </div>
+            </div>
+            {/* 2 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-gray-100 hover:shadow-md transition-shadow cursor-pointer p-4 group">
+              <div className="flex items-center gap-2">
+                 <Network className="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
+                 <span className="text-[11px] font-bold text-gray-700 leading-tight">National Knowledge Network</span>
+              </div>
+            </div>
+            {/* 3 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-white hover:shadow-md transition-shadow cursor-pointer p-2 group">
+              <div className="flex flex-col items-center gap-1">
+                 <Globe className="w-5 h-5 text-blue-800 group-hover:scale-110 transition-transform" />
+                 <span className="text-[12px] font-bold text-blue-800 leading-tight text-center">india.gov.in</span>
+              </div>
+            </div>
+            {/* 4 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-white hover:shadow-md transition-shadow cursor-pointer p-2 group">
+              <div className="flex flex-col items-center gap-1">
+                 <Library className="w-5 h-5 text-indigo-700 group-hover:scale-110 transition-transform" />
+                 <span className="text-[11px] font-bold text-gray-700 leading-tight text-center">INFLIBNET Centre</span>
+              </div>
+            </div>
+            {/* 5 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-white hover:shadow-md transition-shadow cursor-pointer p-2 group">
+              <div className="flex flex-col items-center gap-1">
+                 <Landmark className="w-5 h-5 text-gray-800 group-hover:scale-110 transition-transform" />
+                 <span className="text-[10px] font-semibold text-gray-800 leading-tight text-center">Uttar Pradesh<br />CM Office</span>
+              </div>
+            </div>
+            {/* 6 */}
+            <div className="flex-1 min-w-[160px] max-w-[200px] h-[80px] border-[1.5px] border-gray-200 flex items-center justify-center bg-white hover:shadow-md transition-shadow cursor-pointer p-2 group">
+              <div className="flex flex-col items-center gap-1">
+                 <GraduationCap className="w-6 h-6 text-red-800 group-hover:scale-110 transition-transform" />
+                 <span className="text-[11px] font-bold text-gray-700 leading-tight text-center">University Grants Commission</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -620,57 +780,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating Bottom Banner mimicking the HBS "Join the 25,000+" banner */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#1c1c1c] border-t-2 border-gray-800 z-50 text-white p-4 md:py-5 md:px-8 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between transition-transform transform">
-        {/* Left Side of Banner: Logo & Text */}
-        <div className="flex items-center gap-4 md:gap-8 w-full md:w-auto mb-4 md:mb-0">
-          {/* Logo Badge */}
-          <div className="hidden md:flex flex-shrink-0 items-center justify-center w-14 h-14 bg-white rounded-sm">
-            <span className="font-serif font-black text-2xl text-black">AU</span>
-          </div>
-          
-          {/* Divider */}
-          <div className="hidden md:block h-12 w-px bg-gray-700"></div>
-          
-          {/* Text Content */}
-          <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-3 flex-1 text-center md:text-left">
-            <span className="font-black text-sm md:text-lg lg:text-xl uppercase tracking-wide text-white">
-              JOIN THE <span className="text-[#C4263F]">25,000+</span> LEARNERS WHO ENROLLED
-            </span>
-            <span className="font-black text-xs md:text-sm lg:text-xl text-white uppercase tracking-wide">
-              IN AU ONLINE CERTIFICATE PROGRAMS THIS YEAR
-            </span>
-          </div>
-        </div>
-
-        {/* Right Side of Banner: Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-          <Link
-            href="#courses"
-            className="w-full sm:w-auto bg-[#c51b29] hover:bg-[#a31622] text-white font-bold py-3 px-10 text-center text-sm transition-colors shadow-lg"
-          >
-            Explore Courses
-          </Link>
-          <button className="text-gray-400 hover:text-white text-xs font-semibold hover:underline">
-            No Thanks
-          </button>
-        </div>
-
-        {/* Close Icon (decorative) */}
-        <button className="absolute top-2 right-4 text-gray-500 hover:text-white hidden md:block">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Floating Chat Widget Button (Bottom Right) */}
-      <button className="fixed bottom-28 right-8 z-[70] w-[56px] h-[56px] bg-[#a8142b] hover:bg-[#8A1A2C] rounded-full shadow-[0_4px_14px_rgba(168,20,43,0.4)] flex items-center justify-center transition-transform hover:scale-105 cursor-pointer">
-        <svg className="w-7 h-7 text-white mt-1 mr-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </button>
-
+      <FloatingBanner />
+      <ChatWidget />
     </div>
   );
 }
