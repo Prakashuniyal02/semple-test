@@ -1,26 +1,37 @@
 import React from 'react';
+import { Building2, Home, Library, MonitorPlay, Activity } from 'lucide-react';
 
 export const metadata = { title: 'Facilities | University of Allahabad' };
 
 export default function FacilitiesPage() {
+  const facilities = [
+    { title: 'Central Library', icon: <Library className="w-6 h-6" />, desc: 'Extensive collection of rare manuscripts, digital archives, and national journals.' },
+    { title: 'Hostels & Accommodation', icon: <Home className="w-6 h-6" />, desc: 'Safe, fully equipped on-campus residence halls for both boys and girls.' },
+    { title: 'Laboratories', icon: <MonitorPlay className="w-6 h-6" />, desc: 'State-of-the-art computational and experimental labs for research scholars.' },
+    { title: 'Sports & Athletics', icon: <Activity className="w-6 h-6" />, desc: 'Olympic-standard tracks, indoor stadiums, and expansive playing fields.' },
+    { title: 'Campus Infrastructure', icon: <Building2 className="w-6 h-6" />, desc: 'Historic colonial architecture blended with modern smart-classrooms.' },
+  ];
+
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex flex-col pt-0 lg:pt-[120px]">
-      <section className="relative w-full h-[250px] md:h-[350px] bg-[#111] overflow-hidden flex items-center justify-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white z-10 drop-shadow-md tracking-tight uppercase">Facilities</h1>
-        <div className="absolute inset-0 bg-[#A31F34]/95"></div>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+    <div className="w-full min-h-screen bg-[#fafafa] flex flex-col pt-0 lg:pt-[120px]">
+      <section className="w-full bg-[#7a1c22] text-white py-16 md:py-24 px-6 xl:px-24 mt-[80px] lg:mt-0">
+        <div className="max-w-[1400px] mx-auto text-center md:text-left">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 tracking-tight">Facilities</h1>
+          <p className="text-lg md:text-2xl text-white/90 font-light">Providing a world-class environment for holistic development</p>
+        </div>
       </section>
-      <section className="w-full max-w-[1200px] mx-auto px-6 py-16">
-        <div className="bg-white p-8 md:p-12 rounded-xl shadow-md border border-gray-100 min-h-[400px] flex flex-col items-center justify-center text-center">
-          <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mb-6 shadow-inner border border-gray-100">
-            <svg className="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-            </svg>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Facilities Section Upcoming</h2>
-          <p className="text-gray-500 max-w-lg text-lg leading-relaxed">
-            This is a placeholder page for the Facilities section. The content and features for this page are currently under development and will be available soon.
-          </p>
+
+      <section className="w-full py-24 px-6 xl:px-24 bg-white border-t border-gray-200">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facilities.map((fac, idx) => (
+              <div key={idx} className="border border-gray-200 p-10 hover:border-[#7a1c22] transition-colors bg-[#fbf9f9] group cursor-pointer">
+                <div className="w-16 h-16 bg-white border border-gray-200 text-[#7a1c22] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#7a1c22] group-hover:text-white transition-colors">
+                  {fac.icon}
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-[#352526] mb-4 group-hover:text-[#7a1c22] transition-colors">{fac.title}</h3>
+                <p className="text-gray-600 font-medium text-[16px] leading-relaxed">{fac.desc}</p>
+              </div>
+            ))}
         </div>
       </section>
     </div>

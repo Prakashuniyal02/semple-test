@@ -272,507 +272,162 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Explore Courses & Programs Section */}
-      <section className="bg-white w-full px-6 lg:px-12 xl:px-24 pb-32">
-        <div className="max-w-[1500px] mx-auto bg-[#232323] p-8 md:p-10 lg:p-16 flex flex-col">
-          <h2 className="text-3xl lg:text-[2.5rem] font-sans font-light text-white mb-2 leading-tight">
-            Explore all courses &amp; programs
-          </h2>
-          <h3 className="text-3xl lg:text-[2.5rem] font-sans font-light text-gray-400 mb-10 leading-tight">
-            Find the offering that aligns with your goals.
-          </h3>
-
-          {/* Search Bar / Filter Row */}
-          <div className="flex flex-col lg:flex-row w-full bg-[#353535] border border-[#4a4a4a] text-white">
-            
-            {/* Search Input */}
-            <div className="flex-1 lg:flex-[1.5] xl:flex-[2] flex items-center px-5 py-4 lg:py-5 border-b lg:border-b-0 lg:border-r border-[#4a4a4a]">
-              <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-              <input 
-                type="text" 
-                placeholder='Search by keyword, e.g. "leadership"' 
-                className="bg-transparent border-none outline-none text-white w-full placeholder-gray-400 text-[15px]"
-              />
-            </div>
-
-            {/* Dropdown 1: Any subject */}
-            <div className="flex-1 flex items-center justify-between px-6 py-4 lg:py-5 cursor-pointer hover:bg-[#404040] transition-colors border-b lg:border-b-0 lg:border-r border-[#4a4a4a]">
-              <span className="text-[17px] text-gray-300">Any subject</span>
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-
-            {/* Dropdown 2: Any format */}
-            <div className="flex-1 flex items-center justify-between px-6 py-4 lg:py-5 cursor-pointer hover:bg-[#404040] transition-colors">
-              <span className="text-[17px] text-gray-300">Any format</span>
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-
-            {/* Button */}
-            <button className="bg-[#b32034] hover:bg-[#8A1A2C] transition-colors text-white font-bold py-4 lg:py-5 px-8 text-center text-[16px]">
-              Browse Programs
-            </button>
-          </div>
-
-          <p className="text-gray-400 text-[13.5px] mt-8 font-sans">
-            Not ready? Learn more about our <a href="#experience" className="text-gray-300 underline underline-offset-4 hover:text-white transition-colors decoration-gray-400">learning experience</a> or <a href="#request" className="text-gray-300 underline underline-offset-4 hover:text-white transition-colors decoration-gray-400">request more information</a>.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Courses Section */}
-      <section className="bg-[#fdfdff] w-full px-6 lg:px-12 xl:px-24 py-16 border-t border-gray-200 pb-12">
+      {/* Featured Programs Section */}
+      <section className="bg-white w-full px-6 lg:px-12 xl:px-24 py-24 border-t border-gray-200">
         <div className="max-w-[1500px] mx-auto">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-gray-300 pb-4 mb-8">
-            <h2 className="text-[1.4rem] font-bold text-gray-800 tracking-tight">Featured Courses</h2>
-            <a href="#all-courses" className="text-[1.05rem] font-bold text-black hover:underline underline-offset-4 flex items-center mt-2 sm:mt-0">
-              All Courses &amp; Programs <span className="ml-1 text-xl leading-none">&rarr;</span>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-[2px] bg-[#A31F34]"></div>
+                <span className="text-[#A31F34] font-bold tracking-widest text-sm uppercase">Academics</span>
+              </div>
+              <h2 className="text-[2.2rem] lg:text-[3rem] font-bold text-gray-900 leading-tight tracking-tight">
+                Featured Programs
+              </h2>
+              <p className="mt-4 text-[17px] text-gray-600 leading-relaxed font-light">
+                Choose from our diverse range of undergraduate and postgraduate programs designed to prepare you for global success.
+              </p>
+            </div>
+            <a href="/courses" className="mt-6 md:mt-0 px-6 py-3 border-2 border-[#A31F34] text-[#A31F34] font-bold hover:bg-[#A31F34] hover:text-white transition-all duration-300">
+              View All Programs
             </a>
           </div>
 
-          {/* Cards Grid */}
+          {/* Programs Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            {/* Card 1 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#cbbbe5] shadow-[0_4px_12px_rgba(0,0,0,0.05)] pt-6 pb-6 px-7 group hover:-translate-y-1 transition-transform cursor-pointer">
-              <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-3">Digital Transformation &amp; AI</span>
-              <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2 hover:decoration-[#C4263F]">
-                Data Science and AI for Decision Making
-              </h3>
-              <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-8 flex-grow">
-                Develop the practical skills to turn data insights into strategic action. Apply data science, machine learning, and generative AI concepts through interactive, hands-on tools and learn how to forecast outcomes, uncover trends, and guide high-stakes business decisions with confidence.
-              </p>
-              <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mb-8">
-                <span>On-Demand</span>
-                <span>$1,850, Payment due Feb 25, 2027</span>
-                <span>20-25 hrs, 5-6 hrs/module</span>
-              </div>
-              <div className="flex justify-between items-center text-[14px]">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#fab1c7] shadow-[0_4px_12px_rgba(0,0,0,0.05)] pt-6 pb-6 px-7 group hover:-translate-y-1 transition-transform cursor-pointer">
-              <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-3">Leadership &amp; Management</span>
-              <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2 hover:decoration-[#C4263F]">
-                Transforming Customer Experiences
-              </h3>
-              <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-8 flex-grow">
-                Gain a systematic approach for delivering standout services and experiences that provide a competitive edge and build customer loyalty.
-              </p>
-              <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mb-8 mt-auto">
-                <span>On-Demand</span>
-                <span>$1,850, Payment due Feb 17, 2027</span>
-                <span>20-25 hrs, 5-6 hrs/module</span>
-              </div>
-              <div className="flex justify-between items-center text-[14px]">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#e18eab] shadow-[0_4px_12px_rgba(0,0,0,0.05)] pt-6 pb-6 px-7 group hover:-translate-y-1 transition-transform cursor-pointer relative">
-              <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-3">Leadership &amp; Management</span>
-              <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 underline underline-offset-4 decoration-gray-300 group-hover:decoration-black decoration-2">
-                Dynamic Teaming
-              </h3>
-              <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-8 flex-grow">
-                Acquire the tools, processes, and skills to build agile, adaptable teams and lead them in rapidly changing work environments.
-              </p>
-              <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mb-8 mt-auto">
-                <span>Jun 3, 2026, 1 further session</span>
-                <span>$1,850, Payment due May 28, 2026</span>
-                <span>24-28 hrs, 6-7 hrs/week</span>
-              </div>
-              <div className="flex justify-between items-center text-[14px]">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#b0d89c] shadow-[0_4px_12px_rgba(0,0,0,0.05)] pt-6 pb-6 px-7 group hover:-translate-y-1 transition-transform cursor-pointer">
-              <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-3">Finance &amp; Accounting</span>
-              <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2 hover:decoration-[#C4263F]">
-                Strategic Financial Analysis
-              </h3>
-              <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-8 flex-grow">
-                Explore the intersection of accounting, strategy, and finance, and learn how to evaluate a business's performance, prospects, and value to make strategic investment decisions that generate financial success.
-              </p>
-              <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mb-8 mt-auto">
-                <span>Apr 29, 2026, 1 further session</span>
-                <span>$1,850, Payment due Apr 28, 2026</span>
-                <span>40-45 hrs, 5-6 hrs/week</span>
-              </div>
-              <div className="flex justify-between items-center text-[14px]">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* Multi-Course Programs Section */}
-      <section className="bg-[#fdfdff] w-full px-6 lg:px-12 xl:px-24 pb-32">
-        <div className="max-w-[1500px] mx-auto">
-          {/* Header */}
-          <div className="border-b border-gray-300 pb-3 mb-8">
-            <h2 className="text-[1.4rem] font-bold text-gray-800 tracking-tight">Multi-Course Programs</h2>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            
-            {/* Card 1 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#9fdca4] shadow-[0_4px_12px_rgba(0,0,0,0.05)] px-6 pt-6 pb-6 group hover:-translate-y-1 transition-transform cursor-pointer">
-              {/* Main Content Area: Flex Row */}
-              <div className="flex flex-col lg:flex-row gap-6 mb-8 flex-grow">
-                {/* Image */}
-                <div className="w-full lg:w-48 shrink-0">
-                  <div className="w-full aspect-square bg-[#e3b2a4] relative overflow-hidden flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" className="w-32 h-32 absolute left-4 opacity-70"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                    <div className="w-16 h-16 bg-white shadow-xl flex items-center justify-center z-10 border border-gray-100">
-                      <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                    </div>
-                  </div>
+            {[
+              { title: 'B.Tech. in Computer Science', type: 'Undergraduate', duration: '4 Years', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
+              { title: 'M.A. in Visual Arts', type: 'Postgraduate', duration: '2 Years', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
+              { title: 'B.Sc. in Data Science', type: 'Undergraduate', duration: '3 Years', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+              { title: 'Ph.D. in Biotechnology', type: 'Doctorate', duration: '3-5 Years', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' }
+            ].map((prog, i) => (
+              <div key={i} className="group bg-[#fdfdff] border border-gray-200 p-8 flex flex-col hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-[#A31F34]/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#A31F34] transition-colors">
+                  <svg className="w-6 h-6 text-[#A31F34] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={prog.icon} />
+                  </svg>
                 </div>
-
-                {/* Middle Info */}
-                <div className="flex-grow flex flex-col">
-                  <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-2">Business Essentials</span>
-                  <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2 hover:decoration-[#C4263F]">
-                    Credential of Readiness (CORe)
-                  </h3>
-                  <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-6 flex-grow pr-2">
-                    CORe is a business fundamentals program that combines three courses—Business Analytics, Economics for Managers, and Financial Accounting—with a final exam to help you achieve fluency in the language of business. Save $1,790 with this 3-course bundle. Starting in June, CORe will become Core Business Essentials—learn more about the changes!
-                  </p>
-                  <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mt-auto">
-                    <span>May 19, 2026, 4 further sessions</span>
-                    <span>$2,650</span>
-                    <span>8-15 hrs/wk</span>
-                  </div>
+                <div className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center justify-between">
+                  {prog.type}
+                  <span className="text-[#A31F34] font-medium bg-red-50 px-2 py-0.5 rounded-sm">{prog.duration}</span>
                 </div>
-
-                {/* Right Info (Stats & List) */}
-                <div className="w-full lg:w-48 shrink-0 flex flex-col pt-1">
-                  <div className="text-[3rem] font-light leading-[0.8] mb-4 text-black">3</div>
-                  <div className="text-[14px] font-bold text-black mb-3">Course Program</div>
-                  <hr className="border-gray-300 mb-3" />
-                  <div className="text-[13.5px] text-gray-600 font-light leading-relaxed">
-                    Business Analytics<br />
-                    Economics for Managers<br />
-                    Financial Accounting<br />
-                    Exam
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Actions */}
-              <div className="flex justify-between items-center text-[14px] mt-auto">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white flex flex-col h-full border-t-[6px] border-[#a0ded9] shadow-[0_4px_12px_rgba(0,0,0,0.05)] px-6 pt-6 pb-6 group hover:-translate-y-1 transition-transform cursor-pointer">
-              {/* Main Content Area: Flex Row */}
-              <div className="flex flex-col lg:flex-row gap-6 mb-8 flex-grow">
-                {/* Image */}
-                <div className="w-full lg:w-48 shrink-0">
-                  <div className="w-full aspect-square bg-[#d994b6] relative overflow-hidden flex items-center justify-center text-black/50">
-                    <svg viewBox="0 0 100 100" className="w-32 h-32 absolute bottom-0 opacity-70"><polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                    <div className="w-0 h-0 border-l-[35px] border-l-transparent border-b-[60px] border-b-black border-r-[35px] border-r-transparent z-10 absolute left-6 bottom-8"></div>
-                  </div>
-                </div>
-
-                {/* Middle Info */}
-                <div className="flex-grow flex flex-col">
-                  <span className="text-[#a8142b] font-bold text-[13px] tracking-wide mb-2">Leadership & Management</span>
-                  <h3 className="text-[1.35rem] font-bold text-black leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2 hover:decoration-[#C4263F]">
-                    Credential of Leadership, Impact, and Management in Business (CLIMB)
-                  </h3>
-                  <p className="text-[14.5px] text-gray-500 leading-relaxed font-light mb-6 flex-grow pr-2">
-                    CLIMB enables new and experienced leaders to ignite their careers with a combination of vital and forward-looking business skills, self-reflection, and an immersive cohort-based learning experience with a diverse global network.
-                  </p>
-                  <div className="text-[13px] text-gray-400 font-light flex flex-col gap-1.5 mt-auto">
-                    <span>Sep 30, 2026, 1 further session</span>
-                    <span>$15,000 (four installments of $3,750)</span>
-                    <span>1 year, 5-9 hours/module</span>
-                  </div>
-                </div>
-
-                {/* Right Info (Stats & List) */}
-                <div className="w-full lg:w-48 shrink-0 flex flex-col pt-1">
-                  <div className="text-[3rem] font-light leading-[0.8] mb-4 text-black">7</div>
-                  <div className="text-[14px] font-bold text-black mb-3">Course Program</div>
-                  <hr className="border-gray-300 mb-3" />
-                  <div className="text-[13.5px] text-gray-600 font-light leading-relaxed">
-                    5 pre-set courses<br />
-                    2 electives<br />
-                    Capstone project<br />
-                    Choose from the New Leader or Experienced Leader learning paths
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Actions */}
-              <div className="flex justify-between items-center text-[14px] mt-auto">
-                <label className="flex items-center gap-2.5 text-black font-bold cursor-pointer group/label">
-                  <input type="checkbox" className="w-[18px] h-[18px] border-2 border-gray-300 rounded-[3px] accent-[#b32034] cursor-pointer" /> 
-                  <span className="group-hover/label:underline underline-offset-2">Compare</span>
-                </label>
-                <span className="font-bold text-black group-hover:underline underline-offset-2 flex items-center">
-                  Learn more <span className="ml-1 leading-none text-xl">&rarr;</span>
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      {/* What Sets Us Apart Section */}
-      <section className="bg-white w-full px-6 lg:px-12 xl:px-24 py-16 lg:py-24 pb-24 border-b border-gray-200">
-        <div className="max-w-[1500px] mx-auto flex flex-col">
-          
-          {/* Top Row: Image + Text */}
-          <div className="flex flex-col lg:flex-row lg:gap-14 xl:gap-16 w-full mb-12">
-            
-            {/* Left Column (Image) */}
-            <div className="hidden lg:block w-[32%] shrink-0 pt-2">
-              <div className="w-full aspect-[2/3] lg:aspect-[3/4.5] xl:aspect-[3/4.5] relative shadow-md">
-                <img 
-                  src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Students walking on campus" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Column (Content) */}
-            <div className="w-full lg:w-[68%] flex flex-col pt-1">
-              
-              {/* Main Header Text */}
-              <div className="mb-8 lg:mb-10">
-                <h2 className="text-[2rem] lg:text-[2.6rem] font-bold text-gray-900 leading-tight mb-2 tracking-tight">
-                  What sets AU Online apart?
-                </h2>
-                <p className="text-[1.6rem] lg:text-[2.1rem] text-gray-500 font-light leading-[1.25]">
-                  Our online certificate and credential programs provide a real-world difference that can transform your life and career.
-                </p>
-              </div>
-
-              <hr className="border-gray-300 mb-10" />
-
-              {/* 3 Columns text */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 mb-12">
-                <div className="md:pr-4 md:border-r border-gray-200">
-                  <h3 className="text-[1.1rem] font-bold text-gray-900 mb-3 tracking-tight">Real-World Cases</h3>
-                  <p className="text-[14.5px] font-light text-gray-500 leading-relaxed">
-                    We bring the classroom to you through our signature case method. Immerse yourself in real scenarios from renowned business experts and leverage course concepts and your peers' perspectives to determine a path forward.
-                  </p>
-                </div>
-                <div className="md:pr-4 md:border-r border-gray-200">
-                  <h3 className="text-[1.1rem] font-bold text-gray-900 mb-3 tracking-tight">Real-World Connections</h3>
-                  <p className="text-[14.5px] font-light text-gray-500 leading-relaxed">
-                    Learn from and network with a global community of peers before, during, and after your program. Ask questions, collaborate, and share experiences across industries. You'll build bonds that last a lifetime.
-                  </p>
-                </div>
-                <div className="md:pr-2">
-                  <h3 className="text-[1.1rem] font-bold text-gray-900 mb-3 tracking-tight">Real-World Outcomes</h3>
-                  <p className="text-[14.5px] font-light text-gray-500 leading-relaxed">
-                    Our certificate and credential programs can lead to transformational outcomes. AU Online has helped learners grow or transition their careers, earn promotions and salary increases, and gain attention from recruiters.
-                  </p>
-                </div>
-              </div>
-
-              <hr className="border-gray-300 mb-8" />
-              
-              {/* Learn More link */}
-              <div>
-                <a href="#difference" className="text-[1.05rem] font-bold text-gray-900 hover:text-gray-600 transition-colors flex items-center group w-fit">
-                  Learn more about AU Online's real-world difference <span className="ml-1.5 transition-transform group-hover:translate-x-1 font-normal text-lg">&rarr;</span>
+                <h3 className="text-[1.3rem] font-bold text-gray-900 leading-snug mb-6 group-hover:text-[#A31F34] transition-colors">
+                  {prog.title}
+                </h3>
+                <a href="#" className="mt-auto flex items-center text-[14px] font-bold text-[#A31F34] group-hover:underline underline-offset-4">
+                  Explore curriculum <span className="ml-1 text-xl leading-none">&rarr;</span>
                 </a>
               </div>
-            </div>
-          </div>
-
-          {/* Bottom Row: Stats + Testimonial */}
-          <div className="flex flex-col lg:flex-row lg:gap-14 xl:gap-16 w-full">
-            
-            {/* Left Column (Empty Spacer to match image layout) */}
-            <div className="hidden lg:block w-[32%] shrink-0"></div>
-
-            {/* Right Column (Content) */}
-            <div className="w-full lg:w-[68%] flex flex-col">
-              
-              <hr className="border-gray-300 mb-10 hidden lg:block" />
-
-              {/* Statistics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div>
-                  <div className="text-[4.5rem] lg:text-[6rem] font-serif leading-[0.85] text-[#222] mb-5 tracking-[-0.04em]">
-                    94<span className="text-[2.5rem] lg:text-[3.5rem]">%</span>
-                  </div>
-                  <p className="text-[14px] font-light text-gray-600 leading-relaxed max-w-[90%]">
-                    of learners said AU Online is more impactful than other online business programs
-                  </p>
-                </div>
-                <div>
-                  <div className="text-[4.5rem] lg:text-[6rem] font-serif leading-[0.85] text-[#222] mb-5 tracking-[-0.04em]">
-                    80<span className="text-[2.5rem] lg:text-[3.5rem]">%</span>
-                  </div>
-                  <p className="text-[14px] font-light text-gray-600 leading-relaxed max-w-[90%]">
-                    of learners said the AU Online experience was better than other online business programs
-                  </p>
-                </div>
-                <div>
-                  <div className="text-[4.5rem] lg:text-[6rem] font-serif leading-[0.85] text-[#222] mb-5 tracking-[-0.04em]">
-                    11<span className="text-[2.5rem] lg:text-[3.5rem]">x</span>
-                  </div>
-                  <p className="text-[14px] font-light text-gray-600 leading-relaxed max-w-[95%]">
-                    return on investment, with 24% of AU Online learners reporting an average $20,466 salary increase
-                  </p>
-                </div>
-              </div>
-
-              <hr className="border-gray-300 mb-12" />
-
-              {/* Testimonial */}
-              <div className="bg-[#f6f6f6] p-8 lg:p-12 lg:pb-14 w-full relative">
-                <p className="text-[1.8rem] lg:text-[2.4rem] font-serif leading-[1.15] text-[#222] mb-8 tracking-tight">
-                  “The real-world examples were the best part of the courses. While going through the examples, I thought a lot about how I would have handled it if I were them. That plays a big role in how I do things now.”
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-gray-300">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Riya Dashoriya" className="object-cover w-full h-full" />
-                  </div>
-                  <div>
-                    <p className="text-[14px] text-gray-700">Riya Dashoriya; Engineering Manager, Quizlet</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Latest Business Insights Section */}
-      <section className="bg-[#0a0a0a] w-full px-6 lg:px-12 xl:px-24 py-20 lg:py-24 pb-48">
-        <div className="max-w-[1500px] mx-auto flex flex-col">
-          
+      {/* Event Highlights Section */}
+      <section className="bg-[#f9fafb] w-full px-6 lg:px-12 xl:px-24 py-20 pb-32 border-t border-gray-200 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#A31F34]/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        
+        <div className="max-w-[1500px] mx-auto">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-end w-full mb-14 gap-8">
-            <h2 className="text-[2.2rem] lg:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight lg:w-[50%]">
-              Explore our latest Business Insights
-            </h2>
-            <div className="lg:w-[45%] lg:pb-2">
-              <p className="text-[16px] text-gray-300 font-light leading-relaxed max-w-lg lg:ml-auto md:ml-0">
-                Get the career insights you need to achieve your goals and gain confidence in your business skills.
-              </p>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-[2px] bg-[#A31F34]"></div>
+                <span className="text-[#A31F34] font-bold tracking-widest text-sm uppercase">Discover</span>
+              </div>
+              <h2 className="text-[2.2rem] lg:text-[3rem] font-bold text-gray-900 leading-tight tracking-tight">
+                Event Highlights
+              </h2>
             </div>
+            <a href="#events" className="mt-6 md:mt-0 px-6 py-3 border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all duration-300">
+              View All Events
+            </a>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gap-y-12">
+          {/* Events Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Card 1 */}
-            <div className="flex flex-col group cursor-pointer w-full">
-              <div className="w-full aspect-[16/10] bg-gray-800 mb-5 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting" className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ease-out" />
+            {/* Event Card 1 */}
+            <div className="group bg-white border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1">
+              <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-2 text-center text-[#A31F34] font-bold z-10 shadow-md min-w-[65px] border border-gray-100">
+                  <div className="text-2xl leading-none">15</div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider mt-1 text-gray-800">Oct</div>
+                </div>
+                <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Convocation Event" width={1000} height={750} className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
               </div>
-              <span className="text-[#3b82f6] font-bold text-[13px] tracking-wide mb-3">Strategy</span>
-              <h3 className="text-[1.3rem] font-bold text-white leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2">
-                How to Align Your Cultural Strategy with Your Organization's Needs
-              </h3>
-              <p className="text-[14.5px] text-gray-400 leading-relaxed font-light mb-4 line-clamp-3">
-                Culture isn't a background condition—it's a strategic force. Learn how to design a cultural framework that aligns with your goals.
-              </p>
-              <div className="text-[12.5px] text-gray-500 font-light mt-auto">
-                By Ally Heinrich on April 9, 2026
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="flex flex-col group cursor-pointer w-full">
-              <div className="w-full aspect-[16/10] bg-gray-800 mb-5 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Handshake" className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ease-out" />
-              </div>
-              <span className="text-[#3b82f6] font-bold text-[13px] tracking-wide mb-3">Leadership & Management</span>
-              <h3 className="text-[1.3rem] font-bold text-white leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2">
-                Exploring Negotiation Strategies: Process, Tactics, & Examples
-              </h3>
-              <p className="text-[14.5px] text-gray-400 leading-relaxed font-light mb-4 line-clamp-3">
-                Successful negotiations start with the right strategy. Learn the key steps in the negotiation process and how to apply them.
-              </p>
-              <div className="text-[12.5px] text-gray-500 font-light mt-auto">
-                By Tim Stobierski on April 7, 2026
+              <div className="p-8 flex flex-col flex-grow relative bg-white">
+                <span className="text-[11px] font-bold tracking-wider text-[#A31F34] uppercase mb-3 bg-[#A31F34]/10 w-max px-2.5 py-1 rounded-sm">Academic</span>
+                <h3 className="text-[1.3rem] font-bold text-gray-900 mb-3 group-hover:text-[#A31F34] transition-colors leading-snug">
+                  Annual Convocation Ceremony 2026
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                  Join us in celebrating the achievements of our graduating class. Featuring a keynote address by distinguished alumni.
+                </p>
+                <div className="flex items-center text-[13px] font-medium text-gray-600 mt-auto border-t border-gray-100 pt-5">
+                  <svg className="w-4 h-4 mr-2 text-[#A31F34] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span className="truncate">Senate Hall, North Campus</span>
+                </div>
               </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="flex flex-col group cursor-pointer w-full">
-              <div className="w-full aspect-[16/10] bg-gray-800 mb-5 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business discussion" className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ease-out" />
+            {/* Event Card 2 */}
+            <div className="group bg-white border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1">
+              <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-2 text-center text-[#A31F34] font-bold z-10 shadow-md min-w-[65px] border border-gray-100">
+                  <div className="text-2xl leading-none">24</div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider mt-1 text-gray-800">Nov</div>
+                </div>
+                <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Research Conference" width={1000} height={750} className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
               </div>
-              <span className="text-[#3b82f6] font-bold text-[13px] tracking-wide mb-3">Leadership & Management</span>
-              <h3 className="text-[1.3rem] font-bold text-white leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2">
-                How to Prepare for a Negotiation
-              </h3>
-              <p className="text-[14.5px] text-gray-400 leading-relaxed font-light mb-4 line-clamp-3">
-                Negotiations can be unpredictable and challenging, and planning can make the difference between a successful or failed outcome.
-              </p>
-              <div className="text-[12.5px] text-gray-500 font-light mt-auto">
-                By Michael Boyles on April 3, 2026
+              <div className="p-8 flex flex-col flex-grow relative bg-white">
+                <span className="text-[11px] font-bold tracking-wider text-[#A31F34] uppercase mb-3 bg-[#A31F34]/10 w-max px-2.5 py-1 rounded-sm">Conference</span>
+                <h3 className="text-[1.3rem] font-bold text-gray-900 mb-3 group-hover:text-[#A31F34] transition-colors leading-snug">
+                  National Research Symposium
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                  A multi-disciplinary symposium showcasing breakthrough research from top scholars and emerging researchers across the country.
+                </p>
+                <div className="flex items-center text-[13px] font-medium text-gray-600 mt-auto border-t border-gray-100 pt-5">
+                  <svg className="w-4 h-4 mr-2 text-[#A31F34] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span className="truncate">Science Faculty Auditorium</span>
+                </div>
               </div>
             </div>
 
-            {/* Card 4 */}
-            <div className="flex flex-col group cursor-pointer w-full">
-              <div className="w-full aspect-[16/10] bg-gray-800 mb-5 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presentation" className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ease-out" />
+            {/* Event Card 3 */}
+            <div className="group bg-white border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1">
+              <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-2 text-center text-[#A31F34] font-bold z-10 shadow-md min-w-[65px] border border-gray-100">
+                  <div className="text-2xl leading-none">05</div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider mt-1 text-gray-800">Jan</div>
+                </div>
+                <Image src="https://images.unsplash.com/photo-1542382122-73145cdee7ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cultural Fest" width={1000} height={750} className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
               </div>
-              <span className="text-[#3b82f6] font-bold text-[13px] tracking-wide mb-3">Strategy</span>
-              <h3 className="text-[1.3rem] font-bold text-white leading-tight mb-4 group-hover:underline underline-offset-4 decoration-2">
-                How Value Creation Applies to Business
-              </h3>
-              <p className="text-[14.5px] text-gray-400 leading-relaxed font-light mb-4 line-clamp-3">
-                Every successful business creates value, but not always in ways you'd expect. Learn how to think strategically about value.
-              </p>
-              <div className="text-[12.5px] text-gray-500 font-light mt-auto">
-                By Ally Heinrich on April 2, 2026
+              <div className="p-8 flex flex-col flex-grow relative bg-white">
+                <span className="text-[11px] font-bold tracking-wider text-[#A31F34] uppercase mb-3 bg-[#A31F34]/10 w-max px-2.5 py-1 rounded-sm">Cultural</span>
+                <h3 className="text-[1.3rem] font-bold text-gray-900 mb-3 group-hover:text-[#A31F34] transition-colors leading-snug">
+                  University Foundation Day Festivities
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                  Experience a vibrant cultural showcase, alumni meetups, and art exhibitions marking the foundation day of the university.
+                </p>
+                <div className="flex items-center text-[13px] font-medium text-gray-600 mt-auto border-t border-gray-100 pt-5">
+                  <svg className="w-4 h-4 mr-2 text-[#A31F34] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span className="truncate">Main Campus Ground</span>
+                </div>
               </div>
             </div>
             

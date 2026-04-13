@@ -50,21 +50,19 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <div className="hidden lg:flex items-center h-full ml-2 xl:ml-6">
-            <div className={`flex items-center space-x-3 xl:space-x-4 text-[12px] xl:text-[13.5px] font-medium transition-colors ${isScrolled ? "text-white" : "text-gray-200"}`}>
+            <div className={`flex items-center space-x-3 xl:space-x-5 text-[12px] xl:text-[14px] font-medium transition-colors ${isScrolled ? "text-white" : "text-gray-200"}`}>
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <Link href="/about" className="flex items-center gap-1 hover:text-white transition-colors">About <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/administration" className="flex items-center gap-1 hover:text-white transition-colors">Administration <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/academics" className="flex items-center gap-1 hover:text-white transition-colors">Academics <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/student" className="flex items-center gap-1 hover:text-white transition-colors">Student <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/research" className="flex items-center gap-1 hover:text-white transition-colors">Research <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/facilities" className="flex items-center gap-1 hover:text-white transition-colors">Facilities <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/gallery" className="flex items-center gap-1 hover:text-white transition-colors">Gallery <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/alumni" className="flex items-center gap-1 hover:text-white transition-colors">Alumni <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/colleges" className="flex items-center gap-1 hover:text-white transition-colors">Colleges <ChevronDown className="w-3 h-3 opacity-70" /></Link>
-              <Link href="/endowment" className="hover:text-white transition-colors">Endowment</Link>
-              <Link href="/iqac" className="hover:text-white transition-colors">IQAC</Link>
-              <Link href="/newsletter" className="hover:text-white transition-colors whitespace-nowrap">News letter</Link>
-              <Link href="/convocation" className="flex items-center gap-1 hover:text-white transition-colors">Convocation <ChevronDown className="w-3 h-3 opacity-70" /></Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
+              <Link href="/administration" className="hover:text-white transition-colors hidden lg:block">Administration</Link>
+              <Link href="/academics" className="hover:text-white transition-colors hidden lg:block">Academics</Link>
+              <Link href="/admission" className="hover:text-white transition-colors text-yellow-400 font-bold xl:text-white xl:font-medium">Admissions</Link>
+              <Link href="/student" className="hover:text-white transition-colors hidden xl:block">Student</Link>
+              <Link href="/notices" className="hover:text-white transition-colors">Notices</Link>
+              <Link href="/research" className="hover:text-white transition-colors hidden xl:block">Research</Link>
+              <Link href="/alumni" className="hover:text-white transition-colors hidden 2xl:block">Alumni</Link>
+              <Link href="/facilities" className="hover:text-white transition-colors hidden 2xl:block">Facilities</Link>
+              <Link href="/tender" className="hover:text-white transition-colors hidden 2xl:block">Tenders</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
         </div>
@@ -112,16 +110,18 @@ export default function Navbar() {
               <Link href="/about" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
               <Link href="/administration" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Administration</Link>
               <Link href="/academics" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Academics</Link>
+              <Link href="/admission" className="text-xl font-bold text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Admissions</Link>
               <Link href="/student" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Student</Link>
-              <Link href="/research" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Research</Link>
+              <Link href="/notices" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Notices & Circulars</Link>
+              <Link href="/results" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Results</Link>
+              <Link href="/research" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Research & Innovation</Link>
+              <Link href="/tender" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Tender & Recruitment</Link>
+              <Link href="/alumni" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Alumni</Link>
+              <Link href="/iqac" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>IQAC</Link>
               <Link href="/facilities" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Facilities</Link>
               <Link href="/gallery" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
-              <Link href="/alumni" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Alumni</Link>
-              <Link href="/colleges" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Colleges</Link>
-              <Link href="/endowment" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Endowment</Link>
-              <Link href="/iqac" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>IQAC</Link>
-              <Link href="/newsletter" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>News letter</Link>
-              <Link href="/convocation" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Convocation</Link>
+              <Link href="/newsletter" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Newsletter</Link>
+              <Link href="/contact" className="text-xl font-light hover:text-[#A31F34] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
               <Link href="/courses" className="text-xl font-light text-[#C4263F] hover:text-[#A31F34] transition-colors flex items-center font-bold mt-4" onClick={() => setIsMobileMenuOpen(false)}>
                 Explore Courses <ChevronDown className="w-4 h-4 ml-2 -rotate-90" />
               </Link>
