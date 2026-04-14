@@ -7,12 +7,68 @@ import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full min-h-screen relative pb-24 bg-[#111111]">
-      <HeroSlider />
+    <div className="flex flex-col w-full min-h-screen relative pb-24 bg-[#111111] xl:bg-[#0f0f0f]">
+      
+      {/* Hero and Leadership Section Wrapper */}
+      <div className="w-full xl:p-8 xl:h-[80vh] xl:min-h-[650px] flex flex-col xl:flex-row relative z-20 xl:bg-[#A31F34]">
+        
+        {/* Slider Section */}
+        <div className="w-full xl:w-[72%] xl:pr-6 h-full">
+          <HeroSlider />
+        </div>
+
+        {/* Desktop Leadership Section - Right Panel (Visible xl and up) */}
+        <div className="hidden xl:flex w-[28%] flex-col items-center justify-center p-6 h-full shrink-0">
+          <div className="text-center mb-8">
+            <h3 className="text-white text-[13px] font-bold tracking-[0.2em] uppercase mb-1">Welcome To</h3>
+            <h2 className="text-[#FBB216] text-[22px] font-extrabold uppercase tracking-wide leading-tight">
+              University of<br/>Allahabad
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-5 w-full">
+            {/* Card 1 Desktop */}
+            <div className="flex flex-col items-center group cursor-default rounded-lg p-2 hover:bg-white/5 transition-all">
+              <div className="relative w-[85px] aspect-square rounded-full overflow-hidden mb-3 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <Image src="/leadership/murmu.jpg" alt="Smt. Droupadi Murmu" fill className="object-cover object-top border-2 border-white/20 rounded-full" />
+              </div>
+              <h3 className="text-[13px] font-bold font-sans text-[#FBB216] text-center leading-tight mb-1 drop-shadow-md">Smt. Droupadi Murmu</h3>
+              <p className="text-[10px] font-medium text-white text-center italic tracking-wide">Hon'ble President of India, Visitor</p>
+            </div>
+
+            {/* Card 3 Desktop */}
+            <div className="flex flex-col items-center group cursor-default rounded-lg p-2 hover:bg-white/5 transition-all">
+              <div className="relative w-[85px] aspect-square rounded-full overflow-hidden mb-3 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <Image src="/leadership/chauhan.png" alt="Shri Ashish Kumar Chauhan" fill className="object-cover object-[center_10%] border-2 border-white/20 rounded-full" />
+              </div>
+              <h3 className="text-[13px] font-bold font-sans text-[#FBB216] text-center leading-tight mb-1 drop-shadow-md">Shri Ashish Kumar Chauhan</h3>
+              <p className="text-[10px] font-medium text-white text-center italic tracking-wide">Hon'ble Chancellor</p>
+            </div>
+
+            {/* Card 2 Desktop */}
+            <div className="flex flex-col items-center group cursor-default rounded-lg p-2 hover:bg-white/5 transition-all">
+              <div className="relative w-[85px] aspect-square rounded-full overflow-hidden mb-3 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <Image src="/leadership/patel.png" alt="Smt. Anandiben Patel" fill className="object-cover object-top border-2 border-white/20 rounded-full" />
+              </div>
+              <h3 className="text-[13px] font-bold font-sans text-[#FBB216] text-center leading-tight mb-1 drop-shadow-md">Smt. Anandiben Patel</h3>
+              <p className="text-[10px] font-medium text-white text-center italic tracking-wide">Chief Rector<br/>Governor of U.P.</p>
+            </div>
+
+            {/* Card 4 Desktop */}
+            <div className="flex flex-col items-center group cursor-default rounded-lg p-2 hover:bg-white/5 transition-all">
+              <div className="relative w-[85px] aspect-square rounded-full overflow-hidden mb-3 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <Image src="/leadership/srivastava.jpg" alt="Prof. Sangita Srivastava" fill className="object-cover object-top border-2 border-white/20 rounded-full" />
+              </div>
+              <h3 className="text-[13px] font-bold font-sans text-[#FBB216] text-center leading-tight mb-1 drop-shadow-md">Prof. Sangita Srivastava</h3>
+              <p className="text-[10px] font-medium text-white text-center italic tracking-wide">Hon'ble Vice-Chancellor<br/>(University of Allahabad)</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Leadership Section under Hero */}
-      <section className="w-full bg-white px-6 lg:px-12 xl:px-24 py-16 z-20 relative border-b border-gray-200">
-        <div className="max-w-[1500px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12">
+      <section className="w-full xl:hidden bg-white px-6 lg:px-12 py-16 z-20 relative border-b border-gray-200">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Card 1 */}
           <div className="flex flex-col group cursor-default">
@@ -61,85 +117,148 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Announcement Section */}
-      <section className="w-full bg-white px-6 lg:px-12 xl:px-24 py-16 border-b border-gray-200">
-        <div className="max-w-[1500px] mx-auto">
+      {/* Latest Updates Section */}
+      <section className="w-full bg-[#f8f9fa] px-6 lg:px-12 xl:px-24 py-16 border-b border-gray-200">
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center">
           {/* Header */}
-          <div className="flex items-center mb-10">
-            <h2 className="text-[2rem] font-extrabold font-sans text-[#222] tracking-tight uppercase whitespace-nowrap mr-6">
-              ANNOUNCEMENT
+          <div className="text-center mb-10">
+            <h2 className="text-[2.2rem] font-bold font-sans text-[#A31F34] tracking-tight mb-2">
+              Latest Updates
             </h2>
-            <div className="flex-grow h-px bg-gray-300"></div>
+            <p className="text-gray-600 font-medium text-[15px]">
+              Stay informed with our latest announcements, events, and notifications
+            </p>
+            <div className="flex items-center justify-center mt-4">
+              <div className="h-[2px] w-12 bg-[#A31F34]"></div>
+              <div className="w-3 h-3 rounded-full border-2 border-[#A31F34] mx-1"></div>
+              <div className="h-[2px] w-12 bg-[#A31F34]"></div>
+            </div>
           </div>
 
-          {/* 2-Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mb-12">
             
-            {/* Left Column (Featured News) */}
-            <div className="flex flex-col">
-              <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden mb-5 bg-gray-100 shadow-sm">
-                <Image src="/leadership/srivastava.jpg" alt="Vice-Chancellor" fill className="object-cover object-top" />
+            {/* Card 1 - Announcements */}
+            <div className="bg-white rounded-[1.2rem] shadow-sm border-t-[4px] border-[#A31F34] flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-6 border-b border-gray-50 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#A31F34] p-2 rounded-xl">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                  </div>
+                  <h3 className="font-bold text-[17px] text-gray-900">Announcements</h3>
+                </div>
+                <span className="bg-red-50/80 text-[#A31F34] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">HOT</span>
               </div>
-              <div className="flex items-center text-gray-500 text-sm mb-3 font-medium">
-                <svg className="w-4 h-4 mr-2 text-[#A31F34]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Jan 07, 2024
+              <div className="p-6 flex-grow min-h-[220px]">
+                <ul className="space-y-4">
+                  <li className="flex gap-2">
+                    <span className="text-[#A31F34] mt-1 shrink-0">•</span>
+                    <a href="#" className="text-[14px] font-medium text-gray-600 hover:text-[#A31F34] leading-relaxed transition-colors">Study In India Student Registration</a>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#A31F34] mt-1 shrink-0">•</span>
+                    <a href="#" className="text-[14px] font-medium text-gray-600 hover:text-[#A31F34] leading-relaxed transition-colors">Congratulations to all AU Students selected in IAS 2025</a>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#A31F34] mt-1 shrink-0">•</span>
+                    <a href="#" className="text-[14px] font-medium text-gray-600 hover:text-[#A31F34] leading-relaxed transition-colors">प्रतियोगी परीक्षाओं में चयनित विद्यार्थी सम्मान समारोह</a>
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-lg font-bold font-sans text-gray-800 mb-4 leading-snug">
-                New Year Greeting from Hon'ble Vice-Chancellor
-              </h3>
-              <Link href="#" className="text-[#A31F34] font-bold text-[15px] tracking-wide hover:underline cursor-pointer">
-                View Detail
-              </Link>
+              <div className="p-4 border-t border-gray-50 text-center bg-gray-50/30">
+                <a href="#" className="text-[#A31F34] text-[12px] font-bold uppercase tracking-widest hover:underline">VIEW ALL &rarr;</a>
+              </div>
             </div>
 
-            {/* Right Column (List of Announcements) */}
-            <div className="flex flex-col relative w-full h-[400px] overflow-hidden group">
-              <div className="flex flex-col space-y-6 pr-4 animate-scroll-up group-hover:[animation-play-state:paused] pb-8 pt-4">
-                {/* Announcement 1 */}
-                <div className="border-b border-gray-200 pb-5">
-                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">09 Apr 2026</p>
-                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors flex flex-wrap items-center gap-1.5">
-                    Congratulations to all the AU Students selected in IAS 2025, UPPCS -2024 and Judicial Services
-                    <span className="inline-flex items-center px-1.5 py-0.5 bg-[#d92128] text-white text-[9px] font-bold rounded-sm animate-pulse tracking-wider leading-none relative top-[-1px]">NEW</span>
-                  </p>
+            {/* Card 2 - Events */}
+            <div className="bg-white rounded-[1.2rem] shadow-sm border-t-[4px] border-[#A31F34] flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-6 border-b border-gray-50 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#A31F34] p-2 rounded-xl">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  </div>
+                  <h3 className="font-bold text-[17px] text-gray-900">Events</h3>
                 </div>
-                {/* Announcement 2 */}
-                <div className="border-b border-gray-200 pb-5">
-                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">09 Apr 2026</p>
-                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors flex flex-wrap items-center gap-1.5">
-                    प्रतियोगी परीक्षाओं में चयनित विद्यार्थी सम्मान समारोह, 10 अप्रैल 2026- 'हमें आप पर गर्व है'
-                    <span className="inline-flex items-center px-1.5 py-0.5 bg-[#d92128] text-white text-[9px] font-bold rounded-sm animate-pulse tracking-wider leading-none relative top-[-1px]">NEW</span>
-                  </p>
-                </div>
-                {/* Announcement 3 */}
-                <div className="border-b border-gray-200 pb-5">
-                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">02 Apr 2026</p>
-                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors">
-                    Notice for Practice
-                  </p>
-                </div>
-                {/* Announcement 4 */}
-                <div className="border-b border-gray-200 pb-5">
-                  <p className="text-[#A31F34] text-[13px] font-bold mb-1.5 font-sans">01 Apr 2026</p>
-                  <p className="text-gray-800 font-bold text-[15px] font-sans leading-relaxed hover:text-[#A31F34] cursor-pointer transition-colors">
-                    Guidelines for the Upcoming National Seminar on Modern Physics
-                  </p>
-                </div>
+                <span className="bg-red-50/80 text-[#A31F34] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">LATEST</span>
               </div>
+              <div className="p-6 flex-grow min-h-[220px]">
+                <ul className="space-y-4">
+                  <li className="flex gap-2">
+                    <span className="text-[#A31F34] mt-1 shrink-0">•</span>
+                    <div>
+                      <a href="#" className="text-[14px] font-medium text-gray-600 hover:text-[#A31F34] leading-relaxed transition-colors block mb-1">Gandhi Beyond Boundaries: Relevance of Gandhian Thought in a Global World</a>
+                      <p className="text-[11px] font-semibold text-gray-500">Posted: Apr 07, 2026 • <span className="text-[#A31F34]">Event Deadline: Apr 30, 2026</span></p>
+                    </div>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#A31F34] mt-1 shrink-0">•</span>
+                    <div>
+                      <a href="#" className="text-[14px] font-medium text-gray-600 hover:text-[#A31F34] leading-relaxed transition-colors block mb-1">National Seminar on Modern Physics</a>
+                      <p className="text-[11px] font-semibold text-gray-500">Posted: Apr 01, 2026</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-4 border-t border-gray-50 text-center bg-gray-50/30">
+                <a href="#" className="text-[#A31F34] text-[12px] font-bold uppercase tracking-widest hover:underline">VIEW ALL &rarr;</a>
+              </div>
+            </div>
 
-              {/* Gradient Overlay for seamless scroll effect at top and bottom */}
-              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-white to-transparent pointer-events-none z-10"></div>
-              <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
-
-              {/* Read All News Footer */}
-              <div className="absolute bottom-0 right-4 z-20 bg-white pt-2 pl-4">
-                <Link href="#" className="text-[#A31F34] font-bold text-[15px] hover:underline tracking-wide">
-                  Read All News
-                </Link>
+            {/* Card 3 - Notifications */}
+            <div className="bg-white rounded-[1.2rem] shadow-sm border-t-[4px] border-[#A31F34] flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-6 border-b border-gray-50 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#A31F34] p-2 rounded-xl">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                  </div>
+                  <h3 className="font-bold text-[17px] text-gray-900">Notifications</h3>
+                </div>
+                <span className="bg-red-50/80 text-[#A31F34] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">NEW</span>
+              </div>
+              <div className="p-6 flex-grow min-h-[220px]">
+                <ul className="space-y-4">
+                  <li className="flex gap-2 pb-3 border-b border-gray-50 text-[14px] font-medium text-gray-600">
+                    <span className="text-[#A31F34] shrink-0 mr-1">•</span> UG Admission - 2026-2027
+                  </li>
+                  <li className="flex gap-2 pb-3 border-b border-gray-50 text-[14px] font-medium text-gray-600">
+                    <span className="text-[#A31F34] shrink-0 mr-1">•</span> PG Admission - 2026-2027
+                  </li>
+                  <li className="flex gap-2 text-[14px] font-medium text-gray-600">
+                    <span className="text-[#A31F34] shrink-0 mr-1">•</span> Ph.D Admission - CRET 2026
+                  </li>
+                </ul>
+              </div>
+              <div className="p-4 border-t border-gray-50 text-center bg-gray-50/30">
+                <a href="#" className="text-[#A31F34] text-[12px] font-bold uppercase tracking-widest hover:underline">VIEW ALL &rarr;</a>
               </div>
             </div>
 
           </div>
+
+          {/* Quick Actions Container */}
+          <div className="bg-white rounded-[1.2rem] shadow-sm p-8 w-full max-w-5xl text-center border border-gray-100">
+            <h3 className="text-[1.3rem] font-bold text-gray-800 mb-6">Quick Actions</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {/* Action Buttons */}
+              <a href="#" className="flex items-center gap-3 px-5 py-3 border border-red-50 rounded-lg bg-red-50/30 hover:bg-red-50 transition-colors">
+                <GraduationCap className="w-5 h-5 text-[#A31F34]" />
+                <span className="text-[14px] font-bold text-gray-700">Apply for Admission</span>
+              </a>
+              <a href="#" className="flex items-center gap-3 px-5 py-3 border border-red-50 rounded-lg bg-red-50/30 hover:bg-red-50 transition-colors">
+                <FileText className="w-5 h-5 text-[#A31F34]" />
+                <span className="text-[14px] font-bold text-gray-700">Download Forms</span>
+              </a>
+              <a href="#" className="flex items-center gap-3 px-5 py-3 border border-red-50 rounded-lg bg-red-50/30 hover:bg-red-50 transition-colors">
+                <BookOpen className="w-5 h-5 text-[#A31F34]" />
+                <span className="text-[14px] font-bold text-gray-700">Academic Calendar</span>
+              </a>
+              <a href="#" className="flex items-center gap-3 px-5 py-3 border border-red-50 rounded-lg bg-red-50/30 hover:bg-red-50 transition-colors">
+                <Mail className="w-5 h-5 text-[#A31F34]" />
+                <span className="text-[14px] font-bold text-gray-700">Contact Us</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 

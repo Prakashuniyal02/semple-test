@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    serverActions: true,
+  },
+  // @ts-ignore
+  allowedDevOrigins: ['172.19.0.3', 'localhost', '0.0.0.0'],
 };
 
 export default nextConfig;

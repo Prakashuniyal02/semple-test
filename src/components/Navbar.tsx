@@ -31,10 +31,10 @@ export default function Navbar() {
         {/* Left Section */}
         <div className="flex items-center h-full">
           
-          {/* Logo Block - Only visible when NOT scrolled */}
-          <div className={`flex items-center transition-opacity duration-300 ${isScrolled ? "hidden opacity-0 w-0" : "opacity-100 mr-6"}`}>
+          {/* Logo Block - Always visible, adapts size when scrolled */}
+          <div className={`flex items-center transition-all duration-300 ${isScrolled ? "mr-4" : "mr-6"}`}>
             {/* AU Logo */}
-            <div className="mr-4 flex-shrink-0 bg-white px-2 py-1 rounded-md w-[190px] xl:w-[260px]">
+            <Link href="/" className={`flex-shrink-0 bg-white rounded-md transition-all duration-300 ${isScrolled ? "w-[110px] xl:w-[140px] px-1 py-0.5 mr-3" : "w-[190px] xl:w-[260px] px-2 py-1 mr-4"}`}>
               <Image 
                 src="/au_logo.png" 
                 alt="Allahabad University Logo" 
@@ -43,9 +43,9 @@ export default function Navbar() {
                 className="object-contain w-full h-auto"
                 priority
               />
-            </div>
+            </Link>
             {/* Divider */}
-            <div className="w-px bg-white/40 h-[56px]"></div>
+            <div className={`w-px bg-white/40 transition-all duration-300 ${isScrolled ? "hidden" : "h-[56px]"}`}></div>
           </div>
 
           {/* Navigation Links */}

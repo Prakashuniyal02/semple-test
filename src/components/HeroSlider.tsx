@@ -23,7 +23,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[60vh] lg:min-h-[100vh] overflow-hidden bg-black flex flex-col justify-center">
+    <section className="relative w-full h-full min-h-[60vh] lg:min-h-[85vh] xl:min-h-0 xl:h-full overflow-hidden bg-black flex flex-col justify-center xl:rounded-[1rem] shadow-2xl">
       {images.map((src, index) => (
         <div
           key={index}
